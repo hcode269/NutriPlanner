@@ -153,8 +153,12 @@ document.addEventListener("DOMContentLoaded", () => {
     popup.style.display = "none";
 
     const formData = new FormData(feedbackForm);
+    const phoneValue = phoneInput.value.trim(); // khai báo lại ở đây
+    const emailInput = feedbackForm.querySelector('input[name="email"]');
+    const emailValue = emailInput?.value.trim();
     formData.append("action", "submit_feedback"); // giúp PHP nhận biết
-
+    formData.append("tel", phoneValue);
+    formData.append("email", emailValue);
     fetch("index.php", {
       method: "POST",
       body: formData,

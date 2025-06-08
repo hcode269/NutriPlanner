@@ -58,7 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
   );
   const submitBtn = document.querySelector(".box-button__submit");
   const buttonBox = document.querySelector(".box-button");
-
   const emailError = createErrorBox(email);
   const nameError = createErrorBox(displayName);
   const passError = createErrorBox(password);

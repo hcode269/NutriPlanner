@@ -690,7 +690,9 @@ a {
   font-size: 1.4rem;
   color: red;
   margin: 5px 0 5px;
-  display: none;
+  margin-left: 10px;
+  width: 285px;
+  align-items: center;
 }
 
 .feedbackform--area.invalid {

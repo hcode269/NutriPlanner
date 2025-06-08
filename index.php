@@ -37,13 +37,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 
   $userId = $_SESSION['user_id'] ?? null;
   $email = $_SESSION['email'] ?? '';
+  $phone = trim($_POST['tel'] ?? '');
   $message = trim($_POST['message'] ?? '');
   $rating = (int) ($_POST['rating'] ?? 0);
 
   if ($userId && $email && !empty($message) && $rating > 0) {
     try {
-      $stmt = $pdo->prepare("INSERT INTO feedback (userId, email, message, rating) VALUES (?, ?, ?, ?)");
-      $stmt->execute([$userId, $email, $message, $rating]);
+      $stmt = $pdo->prepare("INSERT INTO feedback (userId, email, phone, message, rating) VALUES (?, ?, ?, ?, ?)");
+      $stmt->execute([$userId, $email, $phone, $message, $rating]);
 
       echo json_encode(['success' => true, 'message' => 'Feedback submitted successfully!']);
     } catch (PDOException $e) {
@@ -331,7 +332,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                   name="email"
                   placeholder="Enter your email address"
                   value="<?php echo htmlspecialchars($_SESSION['email']); ?>"
-                  readonly disabled required />
+                  readonly required />
               </div>
               <!-- Phonenumber -->
               <div class="feedbackform__formphone">
