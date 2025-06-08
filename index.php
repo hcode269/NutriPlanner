@@ -2,9 +2,6 @@
 session_start();
 require_once 'config.php';
 
-// $displayName = $_SESSION['displayName'];
-// var_dump($_SESSION);
-
 try {
   $sql = "SELECT 
     d.*,
@@ -225,26 +222,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         <div>
           <label for="filter-allergen">Allergen</label>
           <select id="filter-allergen">
-            <option value="all">none</option>
+            <option value="all">None</option>
             <option value="Dairy">Không chứa Dairy</option>
             <option value="Gluten">Không chứa Gluten</option>
             <option value="Nuts">Không chứa Nuts</option>
             <option value="Soy">Không chứa Soy</option>
           </select>
         </div>
-        <div>
-          <label for="filter-Save">Save</label>
+        <div class="custom-checkbox">
+          <label for="filter-save">Save</label>
+          <input type="checkbox" id="filter-save" class="checkbox-save" />
+        </div>
+        <div class="custom-checkbox">
+          <label for="filter-favorite">Favorite</label>
+          <input type="checkbox" id="filter-favorite" class="checkbox-favorite" />
         </div>
       </div>
       <!-- Menu các món ăn -->
       <div class="main-dishmenu">
         <div class="main-dishmenu-list container" id="dish-list">
           <?php foreach ($dishes as $dish): ?>
-            <div class="main-dishmenu-item">
+            <div class="main-dishmenu-item" data-dish-id="<?php echo $dish['dishId']; ?>">
               <div class="dish__card">
                 <img src="<?php echo htmlspecialchars($dish['Dishimage']) ?>" alt="dish_img" class="dish__card--thumb" />
                 <div class="dish__card-function">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="bookmark-icon active">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="bookmark-icon">
                     <path d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z" />
                   </svg>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="heart-icon">
@@ -394,6 +396,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
       <p class="footer__content--desc">COOKIES</p>
     </div>
   </footer>
+
   <script src="./assets/js/form-index.js"></script>
   <script src="./assets/js/filter_advanced.js"></script>
   <script src="./assets/js/feedbackform_logic.js"></script>

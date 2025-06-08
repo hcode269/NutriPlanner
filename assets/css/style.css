@@ -412,6 +412,58 @@ a {
   border: 2px solid var(--primary-color);
 }
 
+/* custom filter */
+.custom-checkbox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-checkbox .checkbox-save,
+.custom-checkbox .checkbox-favorite {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--primary-color);
+  border-radius: 7px;
+  background-color: #fff;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.custom-checkbox .checkbox-save:hover,
+.custom-checkbox .checkbox-favorite:hover {
+  box-shadow: 0 1px 5px var(--primary-color);
+}
+
+.custom-checkbox .checkbox-save::after,
+.custom-checkbox .checkbox-favorite::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 9px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.custom-checkbox input[type="checkbox"]:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.custom-checkbox input[type="checkbox"]:checked::after {
+  opacity: 1;
+}
+
 /* ================================DISH DETAILS=========================================== */
 .main-dishmenu-list {
   display: flex;
