@@ -1,6 +1,40 @@
 <?php
 session_start();
 require_once 'config.php';
+$dishId = $_GET['dishId'] ?? null;
+
+if (!$dishId || !is_numeric($dishId)) {
+  header("Location: dishes.php?dishId=1");
+  exit;
+}
+
+// Lấy thông tin món ăn từ cơ sở dữ liệu
+$stmt = $pdo->prepare("SELECT d.*, 
+    GROUP_CONCAT(DISTINCT t.tagName SEPARATOR ',') AS tags 
+    FROM dishes d 
+    LEFT JOIN dishtag dt ON d.dishId = dt.dishId 
+    LEFT JOIN tag t ON dt.tagId = t.tagId 
+    WHERE d.dishId = ?
+    GROUP BY d.dishId
+");
+$stmt->execute([$dishId]);
+$dish = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+// Truy vấn nguyên liệu cho món ăn $dishId:
+$stmt = $pdo->prepare("
+  SELECT i.ingredientName, di.amount
+  FROM dishingredient di
+  JOIN ingredients i ON di.ingredientId = i.ingredientId
+  WHERE di.dishId = ?
+");
+$stmt->execute([$dishId]);
+$ingredients = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$ingredientList = "";
+foreach ($ingredients as $ing) {
+  $ingredientList .= "- {$ing['amount']}g {$ing['ingredientName']}\n";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -126,51 +160,32 @@ require_once 'config.php';
     <section class="dish-info container">
       <!-- Info header -->
       <div class="info-header">
-        <h1 class="info-header__title">PHỞ LÝ QUỐC SƯ</h1>
+        <h1 class="info-header__title"><?php echo strtoupper(htmlspecialchars($dish['dishName'])); ?></h1>
       </div>
       <!-- Info content -->
       <div class="info-content">
         <div class="box-content1">
           <div class="info-content__img">
             <img
-              src="./assets/img/dish_image/PhoLyQuocSu.png"
-              alt="Dish1"
+              src="<?php echo htmlspecialchars($dish['Dishimage']); ?>"
+              alt="<?php echo htmlspecialchars($dish['dishName']); ?>"
               class="info-content__img--thumb" />
           </div>
         </div>
         <div class="box-content2">
           <div class="info-content__recipe">
-            <div class="content__recipe--header">
-              Ingredients and Processing Steps
-            </div>
+            <div class="content__recipe--title">
+              <div class="content__recipe--header" data-tab="ingredient">
+                Ingredients
+              </div>
+              <div class="content__recipe--header" data-tab="step">
+                Steps
+              </div>
+            </div class="content__recipe--title">
             <div class="content__recipe--line"></div>
             <pre class="content__recipe--info">
-  Bước 1: Chuẩn bị nguyên liệu
-  Rửa sạch xương bò, thịt bò.
-  Rang hành tím, gừng trên lửa cho dậy mùi thơm.
-  Bước 2: Ninh nước dùng
-  Cho xương bò vào nồi nước lớn, ninh khoảng 1–2 giờ để lấy nước ngọt.
-  Hớt bọt liên tục để nước trong.
-  Bước 3: Thêm gia vị
-  Cho hành, gừng đã rang, cùng các loại gia vị (thảo quả, quế, hồi, đinh hương) vào nồi nước dùng.
-  Nêm muối, đường phèn, nước mắm cho vừa miệng.
-  Bước 4: Chuẩn bị bánh phở và thịt bò
-  Trụng bánh phở cho mềm.
-  Thái thịt bò mỏng, ướp nhẹ gia vị.
-  Bước 5: Trình bày tô phở
-  Cho bánh phở vào bát, xếp thịt bò lên.
-  Chan nước dùng đang sôi vào.
-  Thêm hành lá, rau thơm theo sở thích.
-  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam quos harum iusto eius voluptatum atque vel necessitatibus, rerum adipisci iste deserunt earum quibusdam quis nostrum consequuntur dolor maiores nesciunt? Voluptas.
-  Ea assumenda quia, tempora sapiente illum et corrupti nostrum saepe sunt porro numquam iste laudantium doloremque dolor atque consectetur distinctio impedit velit quod aspernatur corporis vel? Est quos nulla ea?
-  Enim praesentium nostrum, aut culpa facere voluptates at, quae pariatur iusto dolorum ab dolores nam debitis quasi modi eos similique veritatis, qui tenetur laboriosam laudantium voluptate! Magni dolorem blanditiis officia.
-  Blanditiis, atque, accusamus iure ad sunt est molestiae at cupiditate distinctio tempore, odio beatae adipisci aliquid reprehenderit consectetur. Aspernatur accusantium beatae, saepe assumenda vero debitis voluptate fuga unde delectus perspiciatis.
-  Modi quas, eius, cum dignissimos et in ipsum aspernatur perferendis beatae rerum placeat veniam blanditiis distinctio iusto expedita eveniet qui. Id soluta, velit sed illum alias nam unde explicabo? Temporibus!
-  Provident, magnam placeat atque, quisquam harum voluptates exercitationem excepturi, earum similique asperiores iusto consequatur odit modi. Deleniti culpa provident perspiciatis, accusantium delectus quis, sunt modi minus nam soluta fugiat veniam.
-  Odio modi voluptatibus inventore repellendus, ipsum necessitatibus corporis, accusantium eum laboriosam numquam vel rerum! Rem deserunt aut autem enim nemo quis, quia illo labore ut alias quas delectus, facilis praesentium.
-  Suscipit odit, quis magnam laudantium repudiandae blanditiis ipsum ipsam explicabo possimus ducimus rem, tempora dolores, minima nulla! Quidem est, tenetur quaerat qui nihil officia, laudantium necessitatibus, exercitationem doloribus dolores magni.
-  Adipisci officia accusamus cupiditate facilis aut eum, amet fuga dolores illo expedita minima, cumque qui ullam nam nemo fugit dignissimos eius atque non, odio consectetur. Quo magnam eos in obcaecati?
-  Asperiores, voluptatem quos! Asperiores incidunt corporis earum ipsum adipisci inventore sed? Totam quae, quaerat neque, dolores repellat dolore assumenda nobis ullam eos atque praesentium debitis consequuntur aspernatur ab, facere sed?
+<?php echo nl2br(htmlspecialchars($ingredientList)); ?>
+<?php echo htmlspecialchars($dish['stepProcess']); ?>
               </pre>
           </div>
         </div>
@@ -182,26 +197,30 @@ require_once 'config.php';
             <div class="content__nutrition--info">
               <div class="nutrition-lineinfo">
                 <p class="nutrition-lineinfo__name">Calories:</p>
-                <p class="nutrition-lineinfo__value">350 kcal</p>
+                <p class="nutrition-lineinfo__value"><?php echo $dish['totalCalorie']; ?> kcal</p>
               </div>
               <div class="nutrition-lineinfo">
                 <p class="nutrition-lineinfo__name">Protein:</p>
-                <p class="nutrition-lineinfo__value">25 g</p>
+                <p class="nutrition-lineinfo__value"><?php echo $dish['totalProtein']; ?> g</p>
               </div>
               <div class="nutrition-lineinfo">
                 <p class="nutrition-lineinfo__name">Fat:</p>
-                <p class="nutrition-lineinfo__value">12 g</p>
+                <p class="nutrition-lineinfo__value"><?php echo $dish['totalFat']; ?> g</p>
               </div>
               <div class="nutrition-lineinfo">
                 <p class="nutrition-lineinfo__name">Carbohydrates:</p>
-                <p class="nutrition-lineinfo__value">12 g</p>
+                <p class="nutrition-lineinfo__value"><?php echo $dish['totalCarb']; ?> g</p>
               </div>
             </div>
           </div>
           <div class="content-tag">
             <div class="content-tag__title">TAG:</div>
-            <span class="content-tag__card">vegan</span>
-            <span class="content-tag__card">breakfast</span>
+            <?php
+            $tags = explode(',', $dish['tags']);
+            foreach ($tags as $tag) {
+              echo '<span class="content-tag__card">' . htmlspecialchars($tag) . '</span>';
+            }
+            ?>
           </div>
         </div>
       </div>
@@ -237,7 +256,12 @@ require_once 'config.php';
       <p class="footer__content--desc">COOKIES</p>
     </div>
   </footer>
+  <script>
+    window.ingredientList = `<?php echo addslashes($ingredientList); ?>`;
+    window.processingSteps = `<?php echo addslashes($dish['stepProcess']); ?>`;
+  </script>
   <script src="./assets/js/form-index.js"></script>
+  <script src="./assets/js/dishDetailAppearance.js"></script>
 </body>
 
 </html>
