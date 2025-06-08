@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2025 at 05:55 PM
+-- Generation Time: Jun 08, 2025 at 07:09 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -451,10 +451,20 @@ INSERT INTO `dishtag` (`dishId`, `tagId`) VALUES
 CREATE TABLE `feedback` (
   `feedbackId` int(11) NOT NULL,
   `userId` int(11) DEFAULT NULL,
+  `phone` varchar(20) NOT NULL,
   `rating` tinyint(4) NOT NULL,
   `message` text DEFAULT NULL,
-  `createdAt` timestamp NOT NULL DEFAULT current_timestamp()
+  `createdAt` timestamp NOT NULL DEFAULT current_timestamp(),
+  `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`feedbackId`, `userId`, `phone`, `rating`, `message`, `createdAt`, `email`) VALUES
+(1, 32, '0966782856', 2, '1', '2025-06-08 05:08:34', 'huy123@gmail.com'),
+(2, 32, '0966785831', 1, '12', '2025-06-08 05:08:49', 'huy123@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -652,7 +662,8 @@ INSERT INTO `users` (`userId`, `email`, `displayName`, `passwordHash`, `userAvat
 (29, 'Huyphung12345@gmail.com', 'HuyHuy123', '$2y$10$FMtjOW.ZO/.cFfoSZiA0munWCfLa0l1/pEEzO4g46RxLGlbAJf/8W', './assets/img/avatars/default.jpg', 0, '2025-06-01 16:46:40'),
 (30, 'Huyphung234@gmail.com', 'Huyphung234', '$2y$10$wwVCDJ9huosdkIFWlgg3..SVnMT8GUsDbB2XzalUp1baIwKVRST/.', './assets/img/avatars/default.jpg', 0, '2025-06-02 01:30:35'),
 (31, 'Huyphung234567@gmail.com', 'Huyphung1234123', '$2y$10$xpWDSwt.oEecT6s1oVZxmO1Km6/Pl4DkliYAAHTrlJA1rgpT2XQRy', './assets/img/avatars/default.jpg', 0, '2025-06-02 09:00:33'),
-(32, 'huy123@gmail.com', 'HuyPhung1231234', '$2y$10$recXQr42FFPvcOjf4vKkGegfZjNTg912C8Q4pUrJiuy6/lJ8jlxHS', './assets/img/avatars/default.jpg', 0, '2025-06-02 11:30:49');
+(32, 'huy123@gmail.com', 'HuyPhung1231234', '$2y$10$recXQr42FFPvcOjf4vKkGegfZjNTg912C8Q4pUrJiuy6/lJ8jlxHS', './assets/img/avatars/default.jpg', 0, '2025-06-02 11:30:49'),
+(33, 'Huyphung@gmail.com', 'HuyPhung', '$2y$10$XrCKkLWMBswtVsK6ENakmevFashakSmROWOo0oc5ULLGWy7VnlEV2', './assets/img/avatars/default.jpg', 0, '2025-06-08 03:48:41');
 
 --
 -- Indexes for dumped tables
@@ -759,6 +770,12 @@ ALTER TABLE `dishes`
   MODIFY `dishId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `feedbackId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `ingredients`
 --
 ALTER TABLE `ingredients`
@@ -768,7 +785,7 @@ ALTER TABLE `ingredients`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- Constraints for dumped tables

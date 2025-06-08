@@ -35,6 +35,10 @@ $ingredientList = "";
 foreach ($ingredients as $ing) {
   $ingredientList .= "- {$ing['amount']}g {$ing['ingredientName']}\n";
 }
+
+// Tìm phần tử max của dishId trong bảng dishes
+$stmt = $pdo->query("SELECT MAX(dishId) FROM dishes");
+$maxDishId = $stmt->fetchColumn();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -259,6 +263,9 @@ foreach ($ingredients as $ing) {
   <script>
     window.ingredientList = `<?php echo addslashes($ingredientList); ?>`;
     window.processingSteps = `<?php echo addslashes($dish['stepProcess']); ?>`;
+  </script>
+  <script>
+    window.maxDishId = <?php echo $maxDishId; ?>;
   </script>
   <script src="./assets/js/form-index.js"></script>
   <script src="./assets/js/dishDetailAppearance.js"></script>

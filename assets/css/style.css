@@ -1244,7 +1244,7 @@ footer {
 
 .content__recipe--header {
   font-size: 2.8rem;
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-medium);
   line-height: 3.4rem;
   padding: 10px 20px;
   border-radius: 999px;
@@ -1256,7 +1256,7 @@ footer {
   background-color: transparent;
   border: 2px solid #fff;
   color: #fff;
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-medium);
 }
 .content__recipe--line {
   position: absolute;
@@ -1272,13 +1272,13 @@ footer {
 .content__recipe--info {
   position: absolute;
   top: 150px;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin: 12px 45px 12px;
   color: #fff;
   white-space: pre-wrap;
-  line-height: 3.2rem;
+  line-height: 3rem;
   height: 60%;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 .box-content3 {
@@ -1325,6 +1325,7 @@ footer {
   margin-top: 46px;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 8px;
   overflow-wrap: break-word;
 }
@@ -1365,7 +1366,6 @@ footer {
 .main-page-next .fa-angle-right:hover {
   background-color: var(--primary-color);
   color: #fff;
-  transition: all 0.5s ease-in-out;
   padding: 0 5px;
 }
 
