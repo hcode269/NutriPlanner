@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Rau Muống",
+    "calories": 30,
+    "protein": 3.0,
+    "fat": 0.2,
+    "carb": 5.0
+  },
+  {
+    "name": "Đu Đủ",
+    "calories": 43,
+    "protein": 0.5,
+    "fat": 0.3,
+    "carb": 11.0
+  },
+  {
+    "name": "Hạt Sen",
+    "calories": 89,
+    "protein": 4.1,
+    "fat": 0.5,
+    "carb": 17.3
+  },
+  {
+    "name": "Cà Rốt",
+    "calories": 41,
+    "protein": 0.9,
+    "fat": 0.2,
+    "carb": 10.0
+  },
+  {
+    "name": "Bông Cải",
+    "calories": 34,
+    "protein": 2.8,
+    "fat": 0.4,
+    "carb": 7.0
+  },
+  {
+    "name": "Khoai Tây",
+    "calories": 77,
+    "protein": 2.0,
+    "fat": 0.1,
+    "carb": 17.0
+  },
+  {
+    "name": "Thịt Bò",
+    "calories": 250,
+    "protein": 26.0,
+    "fat": 15.0,
+    "carb": 0.0
+  }
+]

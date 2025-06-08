@@ -1,0 +1,258 @@
+[
+  {
+    "name": "Salmon Salad",
+    "image": "./assets/img/dish1.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch cá hồi, rau xanh và các loại hạt.\nBước 2: Chế biến cá hồi\nÁp chảo cá hồi đến khi chín vàng đều các mặt.\nBước 3: Chuẩn bị rau\nRửa sạch rau xanh và để ráo.\nBước 4: Trộn salad\nTrộn cá hồi, rau xanh, và các loại hạt với sốt vinaigrette nhẹ.\nBước 5: Trình bày\nCho salad ra đĩa, trang trí thêm lát chanh và rau thơm tùy thích.",
+    "nutrition": { "calories": 502, "protein": 30, "fat": 25, "carb": 20 },
+    "tags": ["vegan", "snack"],
+    "ingredients": "egg, cheese, almonds"
+  },
+  {
+    "name": "Beef Stir-fry",
+    "image": "./assets/img/dish2.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nThái lát thịt bò, rửa sạch rau bina và chuối.\nBước 2: Xào thịt\nPhi thơm tỏi, xào thịt bò với nước sốt đậu nành.\nBước 3: Thêm rau\nCho rau bina và chuối vào xào nhanh tay.\nBước 4: Nêm nếm\nNêm muối, đường và gia vị vừa ăn.\nBước 5: Trình bày\nCho ra đĩa và trang trí với hành lá.",
+    "nutrition": { "calories": 700, "protein": 40, "fat": 35, "carb": 25 },
+    "tags": ["paleo", "smoothies"],
+    "ingredients": "banana, spinach, milk"
+  },
+  {
+    "name": "Vegan Bowl",
+    "image": "./assets/img/dish3.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch các loại rau củ và thịt thay thế.\nBước 2: Luộc hoặc hấp\nLuộc rau củ và thịt thay thế đến chín.\nBước 3: Pha sốt\nTrộn các loại sốt chấm vegan.\nBước 4: Trộn tô\nXếp rau củ và thịt thay thế vào tô, rưới sốt.\nBước 5: Trang trí\nThêm hạt dinh dưỡng và rau thơm lên trên.",
+    "nutrition": { "calories": 479, "protein": 28, "fat": 20, "carb": 30 },
+    "tags": ["vegetarian", "smoothies"],
+    "ingredients": "milk, egg, beef"
+  },
+  {
+    "name": "Chicken Soup",
+    "image": "./assets/img/dish4.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch thịt gà, rau cải và các gia vị.\nBước 2: Nấu nước dùng\nĐun sôi thịt gà cùng gia vị, hớt bọt.\nBước 3: Thêm rau\nCho rau cải vào nấu chín tới.\nBước 4: Nêm nếm\nNêm muối, tiêu cho vừa ăn.\nBước 5: Trình bày\nMúc ra bát, trang trí hành lá.",
+    "nutrition": { "calories": 323, "protein": 25, "fat": 10, "carb": 15 },
+    "tags": ["vegetarian", "breakfast"],
+    "ingredients": "egg, rice, spinach"
+  },
+  {
+    "name": "Fruit Smoothie",
+    "image": "./assets/img/dish5.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch khoai lang, bông cải và mật ong.\nBước 2: Xay sinh tố\nCho nguyên liệu vào máy xay, xay nhuyễn.\nBước 3: Kiểm tra vị\nThêm đường hoặc mật ong nếu cần.\nBước 4: Rót ly\nRót ra ly và thêm đá tùy thích.\nBước 5: Trang trí\nTrang trí bằng lát trái cây tươi.",
+    "nutrition": { "calories": 113, "protein": 5, "fat": 1, "carb": 25 },
+    "tags": ["vegetarian", "lunch"],
+    "ingredients": "sweet potato, broccoli, honey"
+  },
+  {
+    "name": "Avocado Toast",
+    "image": "./assets/img/dish6.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nNghiền bơ, thái lát đậu phụ và đậu phộng.\nBước 2: Nướng bánh mì\nNướng bánh mì cho giòn đều.\nBước 3: Phết bơ\nPhết bơ lên mặt bánh mì.\nBước 4: Trang trí\nThêm đậu phụ và đậu phộng lên trên.\nBước 5: Thưởng thức\nDùng ngay khi bánh còn nóng.",
+    "nutrition": { "calories": 273, "protein": 10, "fat": 15, "carb": 30 },
+    "tags": ["vegetarian", "breakfast"],
+    "ingredients": "tofu, cheese, peanuts"
+  },
+  {
+    "name": "Oatmeal with Berries",
+    "image": "./assets/img/dish7.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch quả mọng và yến mạch.\nBước 2: Nấu cháo\nNấu yến mạch với nước hoặc sữa.\nBước 3: Thêm quả mọng\nCho quả mọng lên trên cháo.\nBước 4: Thêm topping\nRắc hạt quinoa và sữa chua.\nBước 5: Thưởng thức\nDùng khi còn ấm.",
+    "nutrition": { "calories": 333, "protein": 12, "fat": 8, "carb": 50 },
+    "tags": ["keto", "snack"],
+    "ingredients": "quinoa, berries, yogurt"
+  },
+  {
+    "name": "Grilled Chicken",
+    "image": "./assets/img/dish8.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch thịt gà, khoai lang và yến mạch.\nBước 2: Ướp thịt\nƯớp thịt với gia vị, muối tiêu.\nBước 3: Nướng thịt\nNướng thịt trên than hoặc lò nướng.\nBước 4: Chuẩn bị kèm\nLuộc khoai lang và nấu yến mạch.\nBước 5: Trình bày\nBày gà với khoai lang và yến mạch lên đĩa.",
+    "nutrition": { "calories": 183, "protein": 35, "fat": 5, "carb": 10 },
+    "tags": ["vegan", "snack"],
+    "ingredients": "oats, sweet potato, cheese"
+  },
+  {
+    "name": "Tofu Curry",
+    "image": "./assets/img/dish9.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch đậu phụ, lạc, gạo và bông cải.\nBước 2: Nấu nước cốt cà ri\nPhi hành, thêm nước cốt dừa và gia vị.\nBước 3: Thêm nguyên liệu\nCho đậu phụ, lạc, gạo và bông cải vào nấu.\nBước 4: Nêm nếm\nNêm muối, đường cho vừa ăn.\nBước 5: Trình bày\nMúc cà ri ra bát, rắc rau thơm.",
+    "nutrition": { "calories": 199, "protein": 15, "fat": 10, "carb": 20 },
+    "tags": ["keto", "breakfast"],
+    "ingredients": "peanuts, rice, broccoli"
+  },
+  {
+    "name": "Egg Muffins",
+    "image": "./assets/img/dish10.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nĐánh tan trứng, rửa sạch rau bina và quả mọng.\nBước 2: Trộn hỗn hợp\nTrộn trứng với rau và quả mọng.\nBước 3: Đổ khuôn\nĐổ hỗn hợp vào khuôn muffin.\nBước 4: Nướng\nNướng trong lò 20 phút ở 180 độ C.\nBước 5: Thưởng thức\nLấy ra để nguội và dùng.",
+    "nutrition": { "calories": 488, "protein": 25, "fat": 20, "carb": 30 },
+    "tags": ["keto", "smoothies"],
+    "ingredients": "egg, spinach, berries"
+  },
+  {
+    "name": "Protein Pancakes",
+    "image": "./assets/img/dish11.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nTrộn bột pancake với cá hồi, bông cải và sữa.\nBước 2: Nướng bánh\nĐổ bột lên chảo, nướng chín vàng đều.\nBước 3: Lật mặt\nLật bánh và nướng mặt còn lại.\nBước 4: Trang trí\nThêm chút mật ong hoặc trái cây.\nBước 5: Thưởng thức\nDùng nóng để tận hưởng vị ngon.",
+    "nutrition": { "calories": 273, "protein": 30, "fat": 8, "carb": 40 },
+    "tags": ["vegan", "snack"],
+    "ingredients": "salmon, broccoli, milk"
+  },
+  {
+    "name": "Zucchini Noodles",
+    "image": "./assets/img/dish12.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nGọt vỏ bí ngòi thành sợi, rửa sạch khoai lang, quả mọng và thịt bò.\nBước 2: Luộc sơ\nLuộc khoai lang và thịt bò cho chín tái.\nBước 3: Xào nhanh\nXào bí ngòi với gia vị nhẹ.\nBước 4: Trộn nguyên liệu\nTrộn tất cả nguyên liệu vào cùng.\nBước 5: Trình bày\nCho ra đĩa và thêm rau thơm.",
+    "nutrition": { "calories": 222, "protein": 18, "fat": 6, "carb": 22 },
+    "tags": ["vegan", "snack"],
+    "ingredients": "sweet potato, berries, beef"
+  },
+  {
+    "name": "Shrimp Tacos",
+    "image": "./assets/img/dish13.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch tôm, đậu phụ, cà rốt và quả mọng.\nBước 2: Nấu tôm\nChiên hoặc hấp tôm đến khi chín.\nBước 3: Chuẩn bị tacos\nLàm nóng bánh tacos.\nBước 4: Nhồi nhân\nNhồi tôm và các nguyên liệu vào tacos.\nBước 5: Trang trí\nThêm rau thơm và nước sốt theo khẩu vị.",
+    "nutrition": { "calories": 520, "protein": 40, "fat": 15, "carb": 35 },
+    "tags": ["paleo", "breakfast"],
+    "ingredients": "tofu, carrot, berries"
+  },
+  {
+    "name": "Kale Chips",
+    "image": "./assets/img/dish14.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch cải kale, gạo, sữa và yến mạch.\nBước 2: Làm khô\nLàm khô cải kale và cắt thành miếng nhỏ.\nBước 3: Nướng\nNướng cải kale với gia vị cho giòn.\nBước 4: Chuẩn bị kèm\nLuộc gạo và nấu yến mạch.\nBước 5: Thưởng thức\nĂn kèm cải kale với các món khác.",
+    "nutrition": { "calories": 297, "protein": 10, "fat": 12, "carb": 25 },
+    "tags": ["paleo", "breakfast"],
+    "ingredients": "rice, milk, oats"
+  },
+  {
+    "name": "Lentil Stew",
+    "image": "./assets/img/dish15.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch đậu lăng, hạnh nhân, thịt bò và khoai lang.\nBước 2: Nấu đậu lăng\nNấu đậu lăng với nước dùng.\nBước 3: Thêm nguyên liệu\nCho hạnh nhân, thịt bò và khoai lang vào nồi.\nBước 4: Nêm nếm\nNêm muối tiêu và gia vị.\nBước 5: Trình bày\nMúc ra tô và trang trí rau thơm.",
+    "nutrition": { "calories": 530, "protein": 35, "fat": 18, "carb": 40 },
+    "tags": ["paleo", "breakfast"],
+    "ingredients": "almonds, beef, sweet potato"
+  },
+  {
+    "name": "Banana Smoothie",
+    "image": "./assets/img/dish16.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch quả mọng, mật ong và đậu phụ.\nBước 2: Xay sinh tố\nCho nguyên liệu vào máy xay, xay nhuyễn.\nBước 3: Thêm đá\nThêm đá nếu muốn lạnh.\nBước 4: Rót ly\nRót smoothie ra ly.\nBước 5: Trang trí\nThêm lát chuối hoặc quả mọng lên trên.",
+    "nutrition": { "calories": 285, "protein": 8, "fat": 5, "carb": 40 },
+    "tags": ["gluten-free", "dinner"],
+    "ingredients": "berries, honey, tofu"
+  },
+  {
+    "name": "Yogurt Parfait",
+    "image": "./assets/img/dish17.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch đậu phụ, hạnh nhân và quinoa.\nBước 2: Lớp đầu\nCho sữa chua vào ly.\nBước 3: Lớp thứ hai\nThêm đậu phụ, hạnh nhân và quinoa.\nBước 4: Lặp lại\nLặp lại các lớp.\nBước 5: Trang trí\nThêm trái cây tươi lên trên.",
+    "nutrition": { "calories": 132, "protein": 7, "fat": 3, "carb": 20 },
+    "tags": ["gluten-free", "lunch"],
+    "ingredients": "tofu, almonds, quinoa"
+  },
+  {
+    "name": "Quinoa Salad",
+    "image": "./assets/img/dish18.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch quinoa, chuối và yến mạch.\nBước 2: Luộc quinoa\nLuộc quinoa đến khi mềm.\nBước 3: Trộn salad\nTrộn quinoa với chuối và yến mạch.\nBước 4: Thêm gia vị\nThêm muối, tiêu và dầu ôliu.\nBước 5: Trình bày\nCho ra đĩa và thêm rau thơm.",
+    "nutrition": { "calories": 369, "protein": 15, "fat": 7, "carb": 45 },
+    "tags": ["gluten-free", "dinner"],
+    "ingredients": "banana, oats, tofu"
+  },
+  {
+    "name": "Pumpkin Soup",
+    "image": "./assets/img/dish19.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch bí đỏ, cải bó xôi, quả mọng và trứng.\nBước 2: Nấu bí đỏ\nNấu bí đỏ cho mềm.\nBước 3: Xay nhuyễn\nXay bí đỏ với các nguyên liệu còn lại.\nBước 4: Nêm nếm\nNêm muối tiêu, gia vị.\nBước 5: Trình bày\nRót súp ra bát và trang trí rau thơm.",
+    "nutrition": { "calories": 290, "protein": 10, "fat": 10, "carb": 30 },
+    "tags": ["paleo", "dinner"],
+    "ingredients": "spinach, berries, egg"
+  },
+  {
+    "name": "Stuffed Peppers",
+    "image": "./assets/img/dish20.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch ớt chuông, sữa chua, khoai lang và yến mạch.\nBước 2: Nhồi ớt\nNhồi hỗn hợp sữa chua, khoai lang và yến mạch vào ớt.\nBước 3: Nướng ớt\nNướng ớt đến khi mềm.\nBước 4: Trình bày\nCho ra đĩa và trang trí.\nBước 5: Thưởng thức\nDùng nóng để ngon hơn.",
+    "nutrition": { "calories": 239, "protein": 12, "fat": 7, "carb": 28 },
+    "tags": ["vegan", "breakfast"],
+    "ingredients": "yogurt, sweet potato, oats"
+  },
+  {
+    "name": "Peanut Butter Bars",
+    "image": "./assets/img/dish21.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nTrộn thịt gà, thịt bò và chuối.\nBước 2: Tạo khuôn\nĐổ hỗn hợp vào khuôn nướng.\nBước 3: Nướng\nNướng ở nhiệt độ vừa phải cho chín.\nBước 4: Làm nguội\nĐể nguội trước khi cắt.\nBước 5: Thưởng thức\nDùng làm món ăn nhẹ.",
+    "nutrition": { "calories": 122, "protein": 5, "fat": 4, "carb": 15 },
+    "tags": ["gluten-free", "breakfast"],
+    "ingredients": "chicken, beef, banana"
+  },
+  {
+    "name": "Chia Pudding",
+    "image": "./assets/img/dish22.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nNgâm hạt chia, thịt bò, quinoa và cải bó xôi.\nBước 2: Pha trộn\nTrộn các nguyên liệu với sữa hoặc nước.\nBước 3: Ủ lạnh\nĐể hỗn hợp trong tủ lạnh qua đêm.\nBước 4: Trình bày\nCho pudding ra ly.\nBước 5: Thêm topping\nThêm trái cây hoặc hạt theo ý thích.",
+    "nutrition": { "calories": 588, "protein": 20, "fat": 30, "carb": 40 },
+    "tags": ["paleo", "smoothies"],
+    "ingredients": "beef, quinoa, spinach"
+  },
+  {
+    "name": "Spinach Omelette",
+    "image": "./assets/img/dish23.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nĐánh trứng, rửa sạch đậu phụ, yến mạch và khoai lang.\nBước 2: Xào rau\nXào đậu phụ và khoai lang.\nBước 3: Đổ trứng\nĐổ trứng vào chảo, thêm rau đã xào.\nBước 4: Nướng\nChiên đến khi trứng chín.\nBước 5: Trình bày\nDùng nóng cùng rau thơm.",
+    "nutrition": { "calories": 157, "protein": 12, "fat": 8, "carb": 15 },
+    "tags": ["vegan", "snack"],
+    "ingredients": "tofu, oats, sweet potato"
+  },
+  {
+    "name": "Cauliflower Rice",
+    "image": "./assets/img/dish24.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch bông cải xanh, sữa chua và chuối.\nBước 2: Xay nhuyễn\nXay bông cải xanh thành hạt gạo.\nBước 3: Nấu\nXào bông cải với sữa chua và chuối.\nBước 4: Nêm nếm\nNêm muối và gia vị.\nBước 5: Trình bày\nCho ra đĩa và trang trí.",
+    "nutrition": { "calories": 593, "protein": 18, "fat": 15, "carb": 50 },
+    "tags": ["vegan", "breakfast"],
+    "ingredients": "broccoli, yogurt, banana"
+  },
+  {
+    "name": "Greek Salad",
+    "image": "./assets/img/dish25.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch cơm, rau cải và cá hồi.\nBước 2: Trộn salad\nTrộn các nguyên liệu với dầu ôliu và gia vị.\nBước 3: Thêm topping\nThêm phô mai feta và ô liu.\nBước 4: Trình bày\nCho ra đĩa sâu lòng.\nBước 5: Thưởng thức\nDùng ngay để giữ độ tươi ngon.",
+    "nutrition": { "calories": 429, "protein": 25, "fat": 10, "carb": 25 },
+    "tags": ["vegan", "dinner"],
+    "ingredients": "rice, spinach, salmon"
+  },
+  {
+    "name": "Berry Shake",
+    "image": "./assets/img/dish26.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch thịt gà, thịt bò và quinoa.\nBước 2: Xay sinh tố\nXay nguyên liệu với đá và mật ong.\nBước 3: Rót ly\nRót sinh tố ra ly.\nBước 4: Trang trí\nThêm quả mọng tươi.\nBước 5: Thưởng thức\nDùng lạnh.",
+    "nutrition": { "calories": 263, "protein": 20, "fat": 8, "carb": 30 },
+    "tags": ["gluten-free", "dinner"],
+    "ingredients": "chicken, beef, quinoa"
+  },
+  {
+    "name": "Mushroom Risotto",
+    "image": "./assets/img/dish27.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch yến mạch, khoai lang và cải bó xôi.\nBước 2: Xào nấm\nXào nấm với tỏi và bơ.\nBước 3: Nấu risotto\nNấu yến mạch với nước dùng và nấm.\nBước 4: Thêm gia vị\nNêm muối, tiêu vừa ăn.\nBước 5: Trình bày\nRắc phô mai lên trên và dùng nóng.",
+    "nutrition": { "calories": 269, "protein": 15, "fat": 10, "carb": 40 },
+    "tags": ["gluten-free", "smoothies"],
+    "ingredients": "oats, sweet potato, spinach"
+  },
+  {
+    "name": "Energy Balls",
+    "image": "./assets/img/dish28.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch bông cải xanh, cá hồi và đậu phụ.\nBước 2: Trộn nguyên liệu\nTrộn tất cả nguyên liệu với mật ong và hạt.\nBước 3: Tạo viên\nTạo các viên nhỏ bằng tay.\nBước 4: Làm lạnh\nĐể trong tủ lạnh ít nhất 1 giờ.\nBước 5: Thưởng thức\nDùng làm món ăn nhẹ.",
+    "nutrition": { "calories": 237, "protein": 10, "fat": 8, "carb": 30 },
+    "tags": ["paleo", "lunch"],
+    "ingredients": "broccoli, salmon, tofu"
+  },
+  {
+    "name": "Grilled Tofu",
+    "image": "./assets/img/dish29.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch thịt gà, rau bina và mật ong.\nBước 2: Ướp đậu phụ\nƯớp đậu phụ với gia vị.\nBước 3: Nướng\nNướng đậu phụ đến khi vàng giòn.\nBước 4: Chuẩn bị rau\nLuộc rau bina hoặc xào nhanh.\nBước 5: Trình bày\nBày đậu phụ và rau lên đĩa, rưới mật ong.",
+    "nutrition": { "calories": 370, "protein": 20, "fat": 15, "carb": 40 },
+    "tags": ["vegetarian", "smoothies"],
+    "ingredients": "chicken, spinach, honey"
+  },
+  {
+    "name": "Turkey Wrap",
+    "image": "./assets/img/dish30.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\nRửa sạch thịt gà tây, cá hồi và quả mọng.\nBước 2: Chuẩn bị bánh\nLàm nóng bánh wrap.\nBước 3: Nhồi nhân\nNhồi thịt gà tây, cá hồi và quả mọng vào bánh.\nBước 4: Cuộn bánh\nCuộn chặt bánh lại.\nBước 5: Thưởng thức\nCắt vừa ăn và dùng ngay.",
+    "nutrition": { "calories": 526, "protein": 30, "fat": 20, "carb": 50 },
+    "tags": ["vegan", "smoothies"],
+    "ingredients": "chicken, salmon, berries"
+  },
+  {
+    "name": "Mango Sticky Rice",
+    "image": "./assets/img/dish31.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\n  - Vo sạch gạo nếp và ngâm trong nước khoảng 4 tiếng.\n  - Gọt vỏ xoài, cắt thành lát mỏng.\nBước 2: Hấp gạo nếp\n  - Hấp gạo nếp đến khi chín mềm.\nBước 3: Pha nước cốt dừa\n  - Đun nước cốt dừa với đường và một chút muối.\nBước 4: Trộn gạo nếp\n  - Trộn gạo nếp với nước cốt dừa, để thấm khoảng 15 phút.\nBước 5: Trình bày\n  - Cho gạo nếp ra đĩa, xếp xoài lên trên.\n  - Rưới thêm nước cốt dừa và rắc mè rang trang trí.",
+    "nutrition": { "calories": 450, "protein": 5, "fat": 12, "carb": 75 },
+    "tags": ["dessert", "vegetarian"],
+    "ingredients": "sticky rice, mango, coconut milk, sugar"
+  },
+  {
+    "name": "Spaghetti Carbonara",
+    "image": "./assets/img/dish32.jpg",
+    "ingredients_processing": "Bước 1: Chuẩn bị nguyên liệu\n  - Luộc mì spaghetti theo hướng dẫn trên bao bì.\n  - Băm nhỏ tỏi và thái lát thịt ba chỉ hoặc pancetta.\nBước 2: Xào thịt\n  - Phi tỏi và xào thịt đến khi giòn.\nBước 3: Chuẩn bị sốt\n  - Đánh trứng với phô mai Parmesan và tiêu đen.\nBước 4: Trộn mì\n  - Trộn mì vừa luộc vào chảo thịt, tắt bếp.\n  - Đổ hỗn hợp trứng vào trộn nhanh để sốt sánh mượt.\nBước 5: Trình bày\n  - Cho ra đĩa, rắc thêm phô mai và tiêu.",
+    "nutrition": { "calories": 650, "protein": 25, "fat": 30, "carb": 70 },
+    "tags": ["italian", "dinner"],
+    "ingredients": "spaghetti, egg, pancetta, parmesan cheese, black pepper"
+  }
+]
