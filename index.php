@@ -278,7 +278,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                     }
                     ?>
                   </div>
-                  <button class="dish__card--btn">VIEW MORE</button>
+                  <a href="dishes.php?dishId=<?= $dish['dishId'] ?>" class="dish__card--btn">VIEW MORE</a>
                 </div>
                 <div class="dish__ingredients" style="display: none"><?php echo $dish['ingredients'] ?></div>
                 <div class="dish__allergen" style="display: none"><?php echo $dish['allergen'] ?></div>

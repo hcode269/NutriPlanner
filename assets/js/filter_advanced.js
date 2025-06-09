@@ -58,8 +58,14 @@ document.addEventListener("DOMContentLoaded", () => {
       })
         .then((res) => res.json())
         .then((data) => {
+          console.log("Like response:", data);
           if (data.success) {
-            icon.classList.toggle("active", data.liked);
+            if (data.liked == 1) {
+              icon.classList.add("active");
+            } else {
+              icon.classList.remove("active");
+            }
+
             if (favoriteCheckbox.checked) applyFilters();
           }
         });
@@ -161,7 +167,22 @@ document.addEventListener("DOMContentLoaded", () => {
   allergenSelect.addEventListener("change", applyFilters);
   saveCheckbox.addEventListener("change", applyFilters);
   favoriteCheckbox.addEventListener("change", applyFilters);
-
+  fetch("get-liked.php")
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.success) {
+        const likedSet = new Set(data.likedDishes.map(String)); // để so sánh đúng với dataset.dishId
+        document.querySelectorAll(".main-dishmenu-item").forEach((item) => {
+          const dishId = item.dataset.dishId;
+          const heartIcon = item.querySelector(".heart-icon");
+          if (likedSet.has(dishId)) {
+            heartIcon.classList.add("active");
+          } else {
+            heartIcon.classList.remove("active");
+          }
+        });
+      }
+    });
   updateIconState();
   showPage(1);
 });
