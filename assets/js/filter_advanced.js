@@ -120,14 +120,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const calorieText =
         item.querySelector(".dish__card-info--desc")?.textContent || "";
       const calories = parseInt(calorieText.replace(/[^0-9]/g, "")) || 0;
-      const tag1 =
-        item
-          .querySelector(".dish__card-tag--tag1")
-          ?.textContent.toLowerCase() || "";
-      const tag2 =
-        item
-          .querySelector(".dish__card-tag--tag2")
-          ?.textContent.toLowerCase() || "";
+      const tagText =
+        item.querySelector(".dish__tags")?.textContent.toLowerCase() || "";
       const allergenText =
         item.querySelector(".dish__allergen")?.textContent.toLowerCase() || "";
       const dishId = item.dataset.dishId;
@@ -138,12 +132,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const matchSave = !filterBySave || savedDishIds.includes(dishId);
       const matchFavorite = !filterByFavorite || isLiked;
       const matchCalories = calories >= min && calories <= max;
-      const matchDiet =
-        diet === "all" || tag1.includes(diet) || tag2.includes(diet);
-      const matchMeal =
-        mealType === "all" ||
-        tag1.includes(mealType) ||
-        tag2.includes(mealType);
+      const matchDiet = diet === "all" || tagText.includes(diet);
+      const matchMeal = mealType === "all" || tagText.includes(mealType);
       const matchAllergen =
         allergen === "all" || !allergenText.includes(allergen);
 

@@ -140,10 +140,6 @@ require_once 'config.php';
             <li class="col-1">1</li>
             <li class="col-2">
               <select class="ingredient-select">
-                <option value="Rau Muống">Rau Muống</option>
-                <option value="Đu Đủ">Đu Đủ</option>
-                <option value="Hạt Sen">Hạt Sen</option>
-                <option value="Ingridient 4">Ingridient 4</option>
               </select>
             </li>
             <li class="col-3">
@@ -188,19 +184,19 @@ require_once 'config.php';
           <ul class="result-box-content">
             <li class="result-box-content__row">
               <span class="result-box--nutri">Calories:</span>
-              <span class="result-box--value" id="total-calo">0</span>
+              <span class="result-box--value" id="total-calo">0 kcal</span>
             </li>
             <li class="result-box-content__row">
               <span class="result-box--nutri">Protein:</span>
-              <span class="result-box--value" id="total-protein">0</span>
+              <span class="result-box--value" id="total-protein">0 g</span>
             </li>
             <li class="result-box-content__row">
               <span class="result-box--nutri">Fats:</span>
-              <span class="result-box--value" id="total-fat">0</span>
+              <span class="result-box--value" id="total-fat">0 g</span>
             </li>
             <li class="result-box-content__row">
               <span class="result-box--nutri">Carb:</span>
-              <span class="result-box--value" id="total-carb">0</span>
+              <span class="result-box--value" id="total-carb">0 g</span>
             </li>
           </ul>
         </div>

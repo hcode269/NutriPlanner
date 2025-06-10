@@ -1,7 +1,15 @@
 <?php
 session_start();
 require_once 'config.php';
+if (!isset($_SESSION['user_id'])) {
+  header("Location: login.php");
+  exit;
+}
 
+// Ngăn cache luôn
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Pragma: no-cache");
+header("Expires: 0");
 try {
   $sql = "SELECT 
     d.*,
@@ -26,9 +34,14 @@ try {
 } catch (PDOException $e) {
   die("Lỗi truy vấn dishes: " . $e->getMessage());
 }
+// Lấy danh sách meal types từ DB
+$stmt = $pdo->query("SELECT categoryName FROM categories");
+$mealtypes = $stmt->fetchAll(PDO::FETCH_COLUMN);
+// Chọn các chế độ ăn kiêng
+$stmt = $pdo->query("SELECT tagName FROM tag");
+$tags = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
 $success = '';
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'submit_feedback') {
   header('Content-Type: application/json');
 
@@ -201,22 +214,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
           <label for="filter-diet">Diet Type</label>
           <select id="filter-diet">
             <option value="all">All</option>
-            <option value="vegan">Vegan</option>
-            <option value="keto">Keto</option>
-            <option value="paleo">Paleo</option>
-            <option value="vegetarian">Vegetarian</option>
-            <option value="gluten-free">Gluten-Free</option>
+            <?php foreach ($tags as $tag): ?>
+              <option value="<?= strtolower($tag) ?>"><?= $tag ?></option>
+            <?php endforeach; ?>
           </select>
         </div>
         <div>
           <label for="filter-mealtype">Meal Type</label>
           <select id="filter-mealtype">
             <option value="all">All</option>
-            <option value="breakfast">Breakfast</option>
-            <option value="lunch">Lunch</option>
-            <option value="dinner">Dinner</option>
-            <option value="smothies">Smothies</option>
-            <option value="snack">Snack</option>
+            <?php foreach ($mealtypes as $meal): ?>
+              <option value="<?= strtolower($meal) ?>"><?= $meal ?></option>
+            <?php endforeach; ?>
           </select>
         </div>
         <div>
@@ -254,7 +263,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                   </svg>
                 </div>
                 <div class="dish__card-info">
-                  <a href="#!" class="dish__card-info--name"><?php echo htmlspecialchars($dish['dishName']) ?></a>
+                  <a href="dishes.php?dishId=<?= $dish['dishId'] ?>" class="dish__card-info--name"><?php echo htmlspecialchars($dish['dishName']) ?></a>
                   <div class="dish__card-info--desc">Calories: <?php echo $dish['totalCalorie'] ?> Kcal</div>
                   <div class="dish__card-tag">
                     <?php
@@ -279,6 +288,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                     ?>
                   </div>
                   <a href="dishes.php?dishId=<?= $dish['dishId'] ?>" class="dish__card--btn">VIEW MORE</a>
+                </div>
+                <div class="dish__tags" style="display: none;">
+                  <?= htmlspecialchars($dish['categories'] . ',' . $dish['tags']) ?>
                 </div>
                 <div class="dish__ingredients" style="display: none"><?php echo $dish['ingredients'] ?></div>
                 <div class="dish__allergen" style="display: none"><?php echo $dish['allergen'] ?></div>

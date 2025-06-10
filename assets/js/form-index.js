@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   popup.querySelector(".popup-confirm").addEventListener("click", () => {
     popup.style.display = "none";
-    window.location.href = "./login.html";
+    window.location.href = "./logout.php";
   });
 });
 

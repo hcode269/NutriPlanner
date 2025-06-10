@@ -122,6 +122,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
   </div>
   <script src="./assets/js/form-login.js"></script>
+  <script>
+    // Ngăn người dùng dùng nút Back để quay lại trang sau logout
+    history.pushState(null, null, location.href);
+    window.onpopstate = function() {
+      history.go(1);
+    };
+  </script>
 </body>
 
 </html>

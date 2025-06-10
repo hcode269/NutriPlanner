@@ -1,16 +1,29 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+  let ingredientOptions = []; // sẽ được lấy từ file JSON
+  await loadIngredientOptions();
+
+  // Cập nhật tất cả các <select.ingredient-select> đã có sẵn trong HTML
+  document.querySelectorAll(".ingredient-select").forEach((select) => {
+    const currentValue = select.value;
+    select.innerHTML = ""; // xoá hết option cũ
+
+    ingredientOptions.forEach((opt) => {
+      const option = document.createElement("option");
+      option.value = opt;
+      option.textContent = opt;
+      if (opt === currentValue) option.selected = true;
+      select.appendChild(option);
+    });
+  });
+
   const addButton = document.querySelector(".calculator__add-btn");
   const table = document.querySelector(".caculator-infowrap");
 
-  const ingredientOptions = [
-    "Rau Muống",
-    "Đu Đủ",
-    "Hạt Sen",
-    "Cà Rốt",
-    "Bông Cải",
-    "Khoai Tây",
-    "Thịt Bò",
-  ];
+  async function loadIngredientOptions() {
+    const res = await fetch("./json/ingredients_nutrition.json");
+    const data = await res.json();
+    ingredientOptions = data.map((item) => item.name);
+  }
   //Thêm popup ở sau cùng đoạn code
   const ingredientLimitPopup = document.createElement("div");
   ingredientLimitPopup.className = "ingredient-popup";
@@ -203,11 +216,16 @@ function recalculateTotalCalories() {
     }
   });
 
-  document.getElementById("total-calo").textContent = Math.round(totalCalories);
-  document.getElementById("total-protein").textContent =
-    totalProtein.toFixed(1);
-  document.getElementById("total-fat").textContent = totalFat.toFixed(1);
-  document.getElementById("total-carb").textContent = totalCarb.toFixed(1);
+  document.getElementById("total-calo").textContent = `${Math.round(
+    totalCalories
+  )} kcal`;
+  document.getElementById(
+    "total-protein"
+  ).textContent = `${totalProtein.toFixed(1)} g`;
+  document.getElementById("total-fat").textContent = `${totalFat.toFixed(1)} g`;
+  document.getElementById("total-carb").textContent = `${totalCarb.toFixed(
+    1
+  )} g`;
 }
 // đưa hàm recalculateTotalCalories thành một thuộc tính của đối tượng window.
 window.recalculateTotalCalories = recalculateTotalCalories;
