@@ -61,7 +61,7 @@ $stmt = $pdo->prepare("SELECT d.*,
     GROUP BY d.dishId
 ");
 $stmt->execute([$dishId]);
-$dish = $stmt->fetch(PDO::FETCH_ASSOC);
+$dish1 = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
 // Truy vấn nguyên liệu cho món ăn $dishId:
@@ -82,6 +82,7 @@ foreach ($ingredients as $ing) {
 // Tìm phần tử max của dishId trong bảng dishes
 $stmt = $pdo->query("SELECT MAX(dishId) FROM dishes");
 $maxDishId = $stmt->fetchColumn();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -245,15 +246,15 @@ $maxDishId = $stmt->fetchColumn();
     <section class="dish-info container">
       <!-- Info header -->
       <div class="info-header">
-        <h1 class="info-header__title"><?php echo strtoupper(htmlspecialchars($dish['dishName'])); ?></h1>
+        <h1 class="info-header__title"><?php echo strtoupper(htmlspecialchars($dish1['dishName'])); ?></h1>
       </div>
       <!-- Info content -->
       <div class="info-content">
         <div class="box-content1">
           <div class="info-content__img">
             <img
-              src="<?php echo htmlspecialchars($dish['Dishimage']); ?>"
-              alt="<?php echo htmlspecialchars($dish['dishName']); ?>"
+              src="<?php echo htmlspecialchars($dish1['Dishimage']); ?>"
+              alt="<?php echo htmlspecialchars($dish1['dishName']); ?>"
               class="info-content__img--thumb" />
           </div>
         </div>
@@ -270,7 +271,7 @@ $maxDishId = $stmt->fetchColumn();
             <div class="content__recipe--line"></div>
             <pre class="content__recipe--info">
 <?php echo nl2br(htmlspecialchars($ingredientList)); ?>
-<?php echo htmlspecialchars($dish['stepProcess']); ?>
+<?php echo htmlspecialchars($dish1['stepProcess']); ?>
               </pre>
           </div>
         </div>
@@ -282,26 +283,26 @@ $maxDishId = $stmt->fetchColumn();
             <div class="content__nutrition--info">
               <div class="nutrition-lineinfo">
                 <p class="nutrition-lineinfo__name">Calories:</p>
-                <p class="nutrition-lineinfo__value"><?php echo $dish['totalCalorie']; ?> kcal</p>
+                <p class="nutrition-lineinfo__value"><?php echo $dish1['totalCalorie']; ?> kcal</p>
               </div>
               <div class="nutrition-lineinfo">
                 <p class="nutrition-lineinfo__name">Protein:</p>
-                <p class="nutrition-lineinfo__value"><?php echo $dish['totalProtein']; ?> g</p>
+                <p class="nutrition-lineinfo__value"><?php echo $dish1['totalProtein']; ?> g</p>
               </div>
               <div class="nutrition-lineinfo">
                 <p class="nutrition-lineinfo__name">Fat:</p>
-                <p class="nutrition-lineinfo__value"><?php echo $dish['totalFat']; ?> g</p>
+                <p class="nutrition-lineinfo__value"><?php echo $dish1['totalFat']; ?> g</p>
               </div>
               <div class="nutrition-lineinfo">
                 <p class="nutrition-lineinfo__name">Carbohydrates:</p>
-                <p class="nutrition-lineinfo__value"><?php echo $dish['totalCarb']; ?> g</p>
+                <p class="nutrition-lineinfo__value"><?php echo $dish1['totalCarb']; ?> g</p>
               </div>
             </div>
           </div>
           <div class="content-tag">
             <div class="content-tag__title">TAG:</div>
             <?php
-            $tags = explode(',', $dish['tags']);
+            $tags = explode(',', $dish1['tags']);
             foreach ($tags as $tag) {
               echo '<span class="content-tag__card">' . htmlspecialchars($tag) . '</span>';
             }
@@ -343,7 +344,7 @@ $maxDishId = $stmt->fetchColumn();
   </footer>
   <script>
     window.ingredientList = `<?php echo addslashes($ingredientList); ?>`;
-    window.processingSteps = `<?php echo addslashes($dish['stepProcess']); ?>`;
+    window.processingSteps = `<?php echo addslashes($dish1['stepProcess']); ?>`;
   </script>
   <script>
     window.maxDishId = <?php echo $maxDishId; ?>;

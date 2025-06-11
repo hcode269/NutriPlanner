@@ -1324,6 +1324,7 @@ footer {
   white-space: pre-wrap;
   line-height: 3rem;
   height: 60%;
+  width: 82%;
   overflow-y: scroll;
 }
 
