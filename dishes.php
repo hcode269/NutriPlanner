@@ -1,6 +1,49 @@
 <?php
 session_start();
 require_once 'config.php';
+//copy từ bên index.php
+
+if (!isset($_SESSION['user_id'])) {
+  header("Location: login.php");
+  exit;
+}
+
+// Ngăn cache luôn
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Pragma: no-cache");
+header("Expires: 0");
+try {
+  $sql = "SELECT 
+    d.*,
+    GROUP_CONCAT(DISTINCT c.categoryName SEPARATOR ',') AS categories,
+    GROUP_CONCAT(DISTINCT t.tagName SEPARATOR ',') AS tags,
+    GROUP_CONCAT(DISTINCT i.ingredientName SEPARATOR ',') AS ingredients,
+    GROUP_CONCAT(DISTINCT a.allergenName SEPARATOR ',') AS allergen
+  FROM dishes d
+  LEFT JOIN categorydish cd ON d.dishId = cd.dishId
+  LEFT JOIN categories c ON cd.categoryId = c.categoryId
+  LEFT JOIN dishtag dt ON d.dishId = dt.dishId
+  LEFT JOIN tag t ON dt.tagId = t.tagId
+  LEFT JOIN dishingredient di ON d.dishId = di.dishId
+  LEFT JOIN ingredients i ON di.ingredientId = i.ingredientId
+  LEFT JOIN dishallergen da ON d.dishId = da.dishId
+  LEFT JOIN allergen a ON da.allergenId = a.allergenId
+  GROUP BY d.dishId";
+
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute();
+  $dishes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+  die("Lỗi truy vấn dishes: " . $e->getMessage());
+}
+// Lấy danh sách categories từ DB
+$stmt = $pdo->query("SELECT categoryName FROM categories");
+$mealtypes = $stmt->fetchAll(PDO::FETCH_COLUMN);
+// Chọn các chế độ ăn kiêng
+$stmt = $pdo->query("SELECT tagName FROM tag");
+$tags = $stmt->fetchAll(PDO::FETCH_COLUMN);
+// -----------------------------------
+
 $dishId = $_GET['dishId'] ?? null;
 
 if (!$dishId || !is_numeric($dishId)) {
@@ -94,15 +137,53 @@ $maxDishId = $stmt->fetchColumn();
         <!-- Action -->
         <div class="header-navbartop">
           <div class="header-navbartop__search">
-            <img
-              src="./assets/img/search_icon.svg"
-              alt="searchicon"
-              class="header-navbartop__search--searchicon" />
-            <input
-              type="text"
-              placeholder="SEARCH"
-              id="searchInput"
-              class="header-navbartop__search--searchinput" />
+            <div class="navbartop--searchbox">
+              <div class="navbartop--searchiconbox">
+                <img
+                  src="./assets/img/search_icon.svg"
+                  alt="searchicon"
+                  class="header-navbartop__search--searchicon" />
+              </div>
+              <div class="navbartop--searchinputbox">
+                <input
+                  type="text"
+                  placeholder="SEARCH"
+                  id="searchInput"
+                  class="header-navbartop__search--searchinput" />
+              </div>
+              <div class="search-result-dropdown">
+                <div class="searchResult-list">
+                  <?php foreach ($dishes as $dish): ?>
+                    <div class="search-dish-item" data-dish-id="<?php echo $dish['dishId']; ?>">
+                      <img class="dish-item-image" src="<?php echo htmlspecialchars($dish['Dishimage']) ?>" alt="dish_img">
+                      <div class="search-dish-info">
+                        <a href="#!" class="search-dish-name"><?php echo htmlspecialchars($dish['dishName']) ?></a>
+                        <div class="search-dish-calories">Calories: <?php echo $dish['totalCalorie'] ?> Kcal</div>
+                        <div class="search-dish-tags">
+                          <?php
+                          $tags = explode(',', $dish['tags']);
+                          foreach ($tags as $tag) {
+                            echo '<span class="search-dish-tag">' . htmlspecialchars($tag) . '</span>';
+                          }
+                          ?>
+                        </div>
+                        <div class="dish__tags" style="display: none;">
+                          <?= htmlspecialchars($dish['categories'] . ',' . $dish['tags']) ?>
+                        </div>
+                        <div class="dish__ingredients" style="display: none">
+                          <?= htmlspecialchars($dish['ingredients']) ?>
+                        </div>
+                        <div class="dish__allergen" style="display: none">
+                          <?= htmlspecialchars($dish['allergen']) ?>
+                        </div>
+                      </div>
+                    </div>
+                  <?php endforeach; ?>
+
+                </div>
+              </div>
+              <div class="clearsearch-btnbox"><button id="clearSearchBtn" class="clear-search-btn">✕</button></div>
+            </div>
           </div>
           <nav class="header-navbarbottom">
             <ul class="header-navbarbottom__list">

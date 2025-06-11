@@ -1,88 +1,70 @@
 // =========================SEARCH================================
-// SEARCH keyword
-// Tìm kiếm theo tên món
-//Tìm kiếm theo thành phần nguyên liệu
-// Tìm kiếm theo chế độ ăn
+// SEARCH keyword for .search-result-dropdown only
 
 document.addEventListener("DOMContentLoaded", function () {
   const searchInput = document.getElementById("searchInput");
-  const allItems = Array.from(document.querySelectorAll(".main-dishmenu-item"));
-  const paginationContainer = document.querySelector(".main-pagelist");
-  const itemsPerPage = 8;
+  const dropdown = document.querySelector(".search-result-dropdown");
+  const resultList = document.querySelector(".searchResult-list");
+  const dishItems = Array.from(
+    resultList.querySelectorAll(".search-dish-item")
+  );
 
-  let filteredItems = [...allItems];
+  dropdown.style.display = "none";
 
-  function showPage(page, data = filteredItems) {
-    const start = (page - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
+  searchInput.addEventListener("input", () => {
+    const keyword = searchInput.value.toLowerCase().trim();
 
-    allItems.forEach((item) => (item.style.display = "none"));
-
-    data.forEach((item, index) => {
-      if (index >= start && index < end) {
-        item.style.display = "flex";
-      }
-    });
-
-    updatePagination(data.length, page);
-  }
-
-  function updatePagination(totalItems, currentPage) {
-    if (paginationContainer !== null && paginationContainer !== undefined) {
-      const totalPages = Math.ceil(totalItems / itemsPerPage);
-      paginationContainer.innerHTML = ""; // clear old pages
-
-      for (let i = 1; i <= totalPages; i++) {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-        a.className = "main-pageitem" + (i === currentPage ? " active" : "");
-        a.href = "#!";
-        a.dataset.page = i;
-        a.textContent = i;
-
-        a.addEventListener("click", function (e) {
-          e.preventDefault();
-          showPage(parseInt(this.dataset.page), filteredItems);
-        });
-
-        li.appendChild(a);
-        paginationContainer.appendChild(li);
-      }
+    if (keyword === "") {
+      dropdown.style.display = "none";
+      dishItems.forEach((item) => (item.style.display = "none"));
+      return;
     }
-  }
 
-  searchInput.addEventListener("input", function () {
-    const keyword = this.value.toLowerCase();
+    let hasMatch = false;
 
-    filteredItems = allItems.filter((item) => {
+    dishItems.forEach((item) => {
       const name =
-        item
-          .querySelector(".dish__card-info--name")
-          ?.textContent.toLowerCase() || "";
+        item.querySelector(".search-dish-name")?.textContent.toLowerCase() ||
+        "";
+      const tags =
+        item.querySelector(".dish__tags")?.textContent.toLowerCase() || "";
       const ingredients =
         item.querySelector(".dish__ingredients")?.textContent.toLowerCase() ||
         "";
-      const tag1 =
-        item
-          .querySelector(".dish__card-tag--tag1")
-          ?.textContent.toLowerCase() || "";
-      const tag2 =
-        item
-          .querySelector(".dish__card-tag--tag2")
-          ?.textContent.toLowerCase() || "";
+      const combined = name + " " + tags + " " + ingredients;
 
-      return (
-        name.includes(keyword) ||
-        ingredients.includes(keyword) ||
-        tag1.includes(keyword) ||
-        tag2.includes(keyword)
-      );
+      if (combined.includes(keyword)) {
+        item.style.display = "flex";
+        hasMatch = true;
+      } else {
+        item.style.display = "none";
+      }
     });
 
-    showPage(1);
+    dropdown.style.display = hasMatch ? "flex" : "none";
+
+    // Gán sự kiện chuyển trang cho mỗi item kết quả
+    dishItems.forEach((item) => {
+      item.onclick = () => {
+        const dishId = item.dataset.dishId;
+        if (dishId) {
+          window.location.href = `./dishes.php?dishId=${dishId}`;
+        }
+      };
+    });
   });
 
-  showPage(1); // Initial load
+  searchInput.addEventListener("blur", () => {
+    setTimeout(() => {
+      dropdown.style.display = "none";
+    }, 200);
+  });
+
+  searchInput.addEventListener("focus", () => {
+    if (searchInput.value.trim() !== "") {
+      dropdown.style.display = "flex";
+    }
+  });
 });
 
 // =========================Account Logout==============================
@@ -153,5 +135,44 @@ document.addEventListener("DOMContentLoaded", () => {
     icon.addEventListener("click", function () {
       this.classList.toggle("active");
     });
+  });
+});
+
+// ==================TOGGLE SEARCH ICON AND CLEAR BUTTON==================
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.querySelector(
+    ".header-navbartop__search--searchinput"
+  ); // input tìm kiếm
+  const iconBox = document.querySelector(".navbartop--searchiconbox"); // box chứa icon tìm kiếm
+  const clearBtnBox = document.querySelector(".clearsearch-btnbox"); // box chứa nút xóa tìm kiếm
+  const inputBox = document.querySelector(".navbartop--searchinputbox"); // box chứa input tìm kiếm
+  const searchBox = document.querySelector(".navbartop--searchbox"); // box chứa toàn bộ thanh tìm kiếm
+
+  searchInput.addEventListener("focus", () => {
+    iconBox.style.display = "none";
+    clearBtnBox.style.display = "flex";
+    inputBox.style.left = "20px";
+    inputBox.style.width = "calc(100% - 50px)";
+  });
+
+  searchInput.addEventListener("blur", () => {
+    setTimeout(() => {
+      if (searchInput.value.trim() === "") {
+        iconBox.style.display = "flex";
+        clearBtnBox.style.display = "none";
+        inputBox.style.left = "45px";
+        inputBox.style.width = "calc(100% - 85px)";
+      }
+    }, 100);
+  });
+
+  const clearBtn = clearBtnBox.querySelector(".clear-search-btn");
+  clearBtn.addEventListener("click", () => {
+    searchInput.value = "";
+    searchInput.focus();
+    clearBtnBox.style.display = "none";
+    iconBox.style.display = "flex";
+    inputBox.style.left = "45px";
+    inputBox.style.width = "calc(100% - 85px)";
   });
 });

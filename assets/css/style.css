@@ -65,8 +65,6 @@ a {
   height: 37px;
   border: 2px solid var(--secondary-color);
   border-radius: 18.5px;
-  display: flex;
-  align-items: center;
 }
 .header-navbartop__search:hover {
   border-color: var(--primary-color);
@@ -74,24 +72,71 @@ a {
   transition: all 0.2s ease-in-out;
 }
 
+.navbartop--searchbox {
+  position: relative;
+  padding-left: 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 18.5px;
+  display: flex;
+  align-items: center;
+}
+.navbartop--searchiconbox {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 100%;
+}
 .header-navbartop__search--searchicon {
   position: absolute;
   z-index: 1;
-  left: 20px;
   color: var(--secondary-color);
 }
 
-.header-navbartop__search--searchinput {
+.navbartop--searchinputbox {
   position: absolute;
+  left: calc(25px + 20px);
+  width: calc(100% - 45px - 40px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.header-navbartop__search--searchinput {
   z-index: 1;
-  left: 50px;
   border: none;
   outline: none;
-  border-radius: 5px;
+  height: 100%;
   background-color: transparent;
   font-size: 1.6rem;
+  font-weight: var(--font-weight-medium);
   color: var(--secondary-color);
-  width: 540px;
+  width: 100%;
+}
+.clearsearch-btnbox {
+  position: absolute;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  border-radius: 0 18.5px 18.5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.clear-search-btn {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--secondary-color);
+  z-index: 2;
 }
 
 .header-navbarbottom__list {
@@ -1279,7 +1324,7 @@ footer {
   white-space: pre-wrap;
   line-height: 3rem;
   height: 60%;
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
 }
 
 .box-content3 {
@@ -1808,3 +1853,94 @@ li.col-3 {
   scale: 1.05;
 }
 /* -------------------------------------------------------------- */
+/* ------------------------POP UP SEARCH-------------------------- */
+.search-result-dropdown {
+  position: absolute;
+  top: 42px; /* căn dưới input */
+  left: 0;
+  width: 100%;
+  max-height: 400px;
+  background-color: var(--fouth-color);
+  border-radius: 20px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* món ăn hiển thị trong bảng tìm kiếm */
+.searchResult-list {
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px auto;
+  width: 95%;
+  max-height: 380px;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.search-dish-item {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  width: 95%;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: pointer;
+}
+.search-dish-item:hover {
+  background-color: var(--fouth-color);
+  border: 1px solid var(--primary-color);
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  scale: 1.02;
+}
+
+.dish-item-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-left: 20px;
+  margin-right: 80px;
+}
+
+.search-dish-info {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 60px;
+  align-items: flex-start;
+}
+.search-dish-name {
+  font-size: 1.8rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+.search-dish-calories {
+  font-size: 1.4rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--secondary-color);
+  line-height: 1.7rem;
+}
+
+.search-dish-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.search-dish-tag {
+  font-size: 1.2rem;
+  font-weight: var(--font-weight);
+  padding: 3px 6px;
+  border-radius: 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+}

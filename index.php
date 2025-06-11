@@ -34,7 +34,7 @@ try {
 } catch (PDOException $e) {
   die("Lỗi truy vấn dishes: " . $e->getMessage());
 }
-// Lấy danh sách meal types từ DB
+// Lấy danh sách categories từ DB
 $stmt = $pdo->query("SELECT categoryName FROM categories");
 $mealtypes = $stmt->fetchAll(PDO::FETCH_COLUMN);
 // Chọn các chế độ ăn kiêng
@@ -122,15 +122,53 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         <!-- Action -->
         <div class="header-navbartop">
           <div class="header-navbartop__search">
-            <img
-              src="./assets/img/search_icon.svg"
-              alt="searchicon"
-              class="header-navbartop__search--searchicon" />
-            <input
-              type="text"
-              placeholder="SEARCH"
-              id="searchInput"
-              class="header-navbartop__search--searchinput" />
+            <div class="navbartop--searchbox">
+              <div class="navbartop--searchiconbox">
+                <img
+                  src="./assets/img/search_icon.svg"
+                  alt="searchicon"
+                  class="header-navbartop__search--searchicon" />
+              </div>
+              <div class="navbartop--searchinputbox">
+                <input
+                  type="text"
+                  placeholder="SEARCH"
+                  id="searchInput"
+                  class="header-navbartop__search--searchinput" />
+              </div>
+              <div class="search-result-dropdown">
+                <div class="searchResult-list">
+                  <?php foreach ($dishes as $dish): ?>
+                    <div class="search-dish-item" data-dish-id="<?php echo $dish['dishId']; ?>">
+                      <img class="dish-item-image" src="<?php echo htmlspecialchars($dish['Dishimage']) ?>" alt="dish_img">
+                      <div class="search-dish-info">
+                        <a href="#!" class="search-dish-name"><?php echo htmlspecialchars($dish['dishName']) ?></a>
+                        <div class="search-dish-calories">Calories: <?php echo $dish['totalCalorie'] ?> Kcal</div>
+                        <div class="search-dish-tags">
+                          <?php
+                          $tags = explode(',', $dish['tags']);
+                          foreach ($tags as $tag) {
+                            echo '<span class="search-dish-tag">' . htmlspecialchars($tag) . '</span>';
+                          }
+                          ?>
+                        </div>
+                        <div class="dish__tags" style="display: none;">
+                          <?= htmlspecialchars($dish['categories'] . ',' . $dish['tags']) ?>
+                        </div>
+                        <div class="dish__ingredients" style="display: none">
+                          <?= htmlspecialchars($dish['ingredients']) ?>
+                        </div>
+                        <div class="dish__allergen" style="display: none">
+                          <?= htmlspecialchars($dish['allergen']) ?>
+                        </div>
+                      </div>
+                    </div>
+                  <?php endforeach; ?>
+
+                </div>
+              </div>
+              <div class="clearsearch-btnbox"><button id="clearSearchBtn" class="clear-search-btn">✕</button></div>
+            </div>
           </div>
           <nav class="header-navbarbottom">
             <ul class="header-navbarbottom__list">
