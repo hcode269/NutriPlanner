@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2025 at 03:19 AM
+-- Generation Time: Jun 11, 2025 at 06:16 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -222,13 +222,13 @@ CREATE TABLE `dishes` (
 --
 
 INSERT INTO `dishes` (`dishId`, `dishName`, `Dishimage`, `stepProcess`, `totalCalorie`, `totalProtein`, `totalFat`, `totalCarb`, `createdAt`, `updatedAt`) VALUES
-(1, 'Salmon Salad', './assets/img/dish/dish1.jpg', 'Bước 1: Chuẩn bị nguyên liệu\r\nRửa sạch cá hồi, rau xanh và các loại hạt.\r\nBước 2: Chế biến cá hồi\r\nÁp chảo cá hồi đến khi chín vàng đều các mặt.\r\nBước 3: Chuẩn bị rau\r\nRửa sạch rau xanh và để ráo.\r\nBước 4: Trộn salad\r\nTrộn cá hồi, rau xanh, và các loại hạt với sốt vinaigrette nhẹ.\r\nBước 5: Trình bày\r\nCho salad ra đĩa, trang trí thêm lát chanh và rau thơm tùy thích.', 729.3, 29.8, 39.2, 64.4, '2025-05-25 06:02:55', '2025-06-08 16:25:13'),
+(1, 'Salmon Salad', './assets/img/dish/dish1.jpg', 'Bước 1: Chuẩn bị nguyên liệu\nRửa sạch cá hồi, rau xanh và các loại hạt.\nBước 2: Chế biến cá hồi\nÁp chảo cá hồi đến khi chín vàng đều các mặt.\nBước 3: Chuẩn bị rau\nRửa sạch rau xanh và để ráo.\nBước 4: Trộn salad\nTrộn cá hồi, rau xanh, và các loại hạt với sốt vinaigrette nhẹ.\nBước 5: Trình bày\nCho salad ra đĩa, trang trí thêm lát chanh và rau thơm tùy thích.', 729.3, 29.8, 39.2, 64.4, '2025-05-25 06:02:55', '2025-06-11 14:10:49'),
 (2, 'Beef Stir-fry', './assets/img/dish/dish2.jpg', 'Bước 1: Chuẩn bị nguyên liệu\r\nThái lát thịt bò, rửa sạch rau bina và chuối.\r\nBước 2: Xào thịt\r\nPhi thơm tỏi, xào thịt bò với nước sốt đậu nành.\r\nBước 3: Thêm rau\r\nCho rau bina và chuối vào xào nhanh tay.\r\nBước 4: Nêm nếm\r\nNêm muối, đường và gia vị vừa ăn.\r\nBước 5: Trình bày\r\nCho ra đĩa và trang trí với hành lá.', 581.7, 21.5, 20.7, 77.4, '2025-05-25 06:03:10', '2025-06-08 16:25:13'),
-(3, 'Vegan Bowl', './assets/img/dish/dish3.jpg', 'Bước 1: Chuẩn bị nguyên liệu\r\nRửa sạch các loại rau củ và thịt thay thế.\r\nBước 2: Luộc hoặc hấp\r\nLuộc rau củ và thịt thay thế đến chín.\r\nBước 3: Pha sốt\r\nTrộn các loại sốt chấm vegan.\r\nBước 4: Trộn tô\r\nXếp rau củ và thịt thay thế vào tô, rưới sốt.\r\nBước 5: Trang trí\r\nThêm hạt dinh dưỡng và rau thơm lên trên.', 1020.6, 16.4, 46.2, 134.9, '2025-05-25 06:03:42', '2025-06-08 16:25:13'),
+(3, 'Vegan Bowl', './assets/img/dish/dish3.jpg', 'Bước 1: Chuẩn bị nguyên liệu\nRửa sạch các loại rau củ và thịt thay thế.\nBước 2: Luộc hoặc hấp\nLuộc rau củ và thịt thay thế đến chín.\nBước 3: Pha sốt\nTrộn các loại sốt chấm vegan.\nBước 4: Trộn tô\nXếp rau củ và thịt thay thế vào tô, rưới sốt.\nBước 5: Trang trí\nThêm hạt dinh dưỡng và rau thơm lên trên.', 1020.6, 16.4, 46.2, 134.9, '2025-05-25 06:03:42', '2025-06-11 15:52:53'),
 (4, 'Chicken Soup', './assets/img/dish/dish4.jpg', 'Bước 1: Chuẩn bị nguyên liệu\r\nRửa sạch thịt gà, rau cải và các gia vị.\r\nBước 2: Nấu nước dùng\r\nĐun sôi thịt gà cùng gia vị, hớt bọt.\r\nBước 3: Thêm rau\r\nCho rau cải vào nấu chín tới.\r\nBước 4: Nêm nếm\r\nNêm muối, tiêu cho vừa ăn.\r\nBước 5: Trình bày\r\nMúc ra bát, trang trí hành lá.', 725.3, 50.5, 39.2, 42.6, '2025-05-25 06:03:55', '2025-06-08 16:25:13'),
 (5, 'Fruit Smoothie', './assets/img/dish/dish5.jpg', 'Bước 1: Chuẩn bị nguyên liệu\r\nRửa sạch khoai lang, bông cải và mật ong.\r\nBước 2: Xay sinh tố\r\nCho nguyên liệu vào máy xay, xay nhuyễn.\r\nBước 3: Kiểm tra vị\r\nThêm đường hoặc mật ong nếu cần.\r\nBước 4: Rót ly\r\nRót ra ly và thêm đá tùy thích.\r\nBước 5: Trang trí\r\nTrang trí bằng lát trái cây tươi.', 869.7, 39, 29, 113.2, '2025-05-25 06:04:08', '2025-06-08 16:25:13'),
 (6, 'Avocado Toast', './assets/img/dish/dish6.jpg', 'Bước 1: Chuẩn bị nguyên liệu\r\nNghiền bơ, thái lát đậu phụ và đậu phộng.\r\nBước 2: Nướng bánh mì\r\nNướng bánh mì cho giòn đều.\r\nBước 3: Phết bơ\r\nPhết bơ lên mặt bánh mì.\r\nBước 4: Trang trí\r\nThêm đậu phụ và đậu phộng lên trên.\r\nBước 5: Thưởng thức\r\nDùng ngay khi bánh còn nóng.', 484, 21.9, 17.8, 59.2, '2025-05-25 06:04:28', '2025-06-08 16:25:13'),
-(7, 'Oatmeal with Berries', './assets/img/dish/dish7.jpg', 'Bước 1: Chuẩn bị nguyên liệu\r\nRửa sạch quả mọng và yến mạch.\r\nBước 2: Nấu cháo\r\nNấu yến mạch với nước hoặc sữa.\r\nBước 3: Thêm quả mọng\r\nCho quả mọng lên trên cháo.\r\nBước 4: Thêm topping\r\nRắc hạt quinoa và sữa chua.\r\nBước 5: Thưởng thức\r\nDùng khi còn ấm.', 750, 35.7, 27.9, 89, '2025-05-25 06:04:38', '2025-06-08 16:25:13'),
+(7, 'Oatmeal with Berries', './assets/img/dish/dish7.jpg', 'Bước 1: Chuẩn bị nguyên liệu\nRửa sạch quả mọng và yến mạch.\nBước 2: Nấu cháo\nNấu yến mạch với nước hoặc sữa.\nBước 3: Thêm quả mọng\nCho quả mọng lên trên cháo.\nBước 4: Thêm topping\nRắc hạt quinoa và sữa chua.\nBước 5: Thưởng thức\nDùng khi còn ấm.', 750, 35.7, 27.9, 89, '2025-05-25 06:04:38', '2025-06-11 14:11:51'),
 (8, 'Grilled Chicken', './assets/img/dish/dish8.jpg', 'Bước 1: Chuẩn bị nguyên liệu\r\nRửa sạch thịt gà, khoai lang và yến mạch.\r\nBước 2: Ướp thịt\r\nƯớp thịt với gia vị, muối tiêu.\r\nBước 3: Nướng thịt\r\nNướng thịt trên than hoặc lò nướng.\r\nBước 4: Chuẩn bị kèm\r\nLuộc khoai lang và nấu yến mạch.\r\nBước 5: Trình bày\r\nBày gà với khoai lang và yến mạch lên đĩa.', 269.9, 7.2, 14.8, 27, '2025-05-25 06:04:58', '2025-06-08 16:25:13'),
 (9, 'Tofu Curry', './assets/img/dish/dish9.jpg', 'Bước 1: Chuẩn bị nguyên liệu\r\nRửa sạch đậu phụ, lạc, gạo và bông cải.\r\nBước 2: Nấu nước cốt cà ri\r\nPhi hành, thêm nước cốt dừa và gia vị.\r\nBước 3: Thêm nguyên liệu\r\nCho đậu phụ, lạc, gạo và bông cải vào nấu.\r\nBước 4: Nêm nếm\r\nNêm muối, đường cho vừa ăn.\r\nBước 5: Trình bày\r\nMúc cà ri ra bát, rắc rau thơm.', 318.2, 14.5, 9, 44.8, '2025-05-25 06:05:16', '2025-06-08 16:25:13'),
 (10, 'Egg Muffins', './assets/img/dish/dish10.jpg', 'Bước 1: Chuẩn bị nguyên liệu\r\nĐánh tan trứng, rửa sạch rau bina và quả mọng.\r\nBước 2: Trộn hỗn hợp\r\nTrộn trứng với rau và quả mọng.\r\nBước 3: Đổ khuôn\r\nĐổ hỗn hợp vào khuôn muffin.\r\nBước 4: Nướng\r\nNướng trong lò 20 phút ở 180 độ C.\r\nBước 5: Thưởng thức\r\nLấy ra để nguội và dùng.', 224.1, 22.1, 7.6, 16.8, '2025-05-25 06:05:29', '2025-06-08 16:25:13'),
@@ -247,7 +247,7 @@ INSERT INTO `dishes` (`dishId`, `dishName`, `Dishimage`, `stepProcess`, `totalCa
 (23, 'Spinach Omelette', './assets/img/dish/dish23.jpg', 'Bước 1: Chuẩn bị nguyên liệu\r\nĐánh trứng, rửa sạch đậu phụ, yến mạch và khoai lang.\r\nBước 2: Xào rau\r\nXào đậu phụ và khoai lang.\r\nBước 3: Đổ trứng\r\nĐổ trứng vào chảo, thêm rau đã xào.\r\nBước 4: Nướng\r\nChiên đến khi trứng chín.\r\nBước 5: Trình bày\r\nDùng nóng cùng rau thơm.', 594.8, 31.1, 40.7, 26, '2025-05-25 06:08:02', '2025-06-08 16:25:13'),
 (24, 'Cauliflower Rice', './assets/img/dish/dish24.jpg', 'Bước 1: Chuẩn bị nguyên liệu\r\nRửa sạch bông cải xanh, sữa chua và chuối.\r\nBước 2: Xay nhuyễn\r\nXay bông cải xanh thành hạt gạo.\r\nBước 3: Nấu\r\nXào bông cải với sữa chua và chuối.\r\nBước 4: Nêm nếm\r\nNêm muối và gia vị.\r\nBước 5: Trình bày\r\nCho ra đĩa và trang trí.', 211.8, 7.6, 3.2, 38.1, '2025-05-25 06:08:19', '2025-06-08 16:25:13'),
 (25, 'Greek Salad', './assets/img/dish/dish25.jpg', 'Bước 1: Chuẩn bị nguyên liệu\r\nRửa sạch cơm, rau cải và cá hồi.\r\nBước 2: Trộn salad\r\nTrộn các nguyên liệu với dầu ôliu và gia vị.\r\nBước 3: Thêm topping\r\nThêm phô mai feta và ô liu.\r\nBước 4: Trình bày\r\nCho ra đĩa sâu lòng.\r\nBước 5: Thưởng thức\r\nDùng ngay để giữ độ tươi ngon.', 314.1, 24.4, 9, 33.8, '2025-05-25 06:08:32', '2025-06-08 16:25:13'),
-(26, 'Berry Shake', './assets/img/dish/dish26.jpg', 'Bước 1: Chuẩn bị nguyên liệu\r\nRửa sạch thịt gà, thịt bò và quinoa.\r\nBước 2: Xay sinh tố\r\nXay nguyên liệu với đá và mật ong.\r\nBước 3: Rót ly\r\nRót sinh tố ra ly.\r\nBước 4: Trang trí\r\nThêm quả mọng tươi.\r\nBước 5: Thưởng thức\r\nDùng lạnh.', 421.4, 12.6, 19.1, 49.9, '2025-05-25 06:08:45', '2025-06-08 16:25:13'),
+(26, 'Berry Shake', './assets/img/dish/dish26.jpg', 'Bước 1: Chuẩn bị nguyên liệu\nRửa sạch thịt gà, thịt bò và quinoa.\nBước 2: Xay sinh tố\nXay nguyên liệu với đá và mật ong.\nBước 3: Rót ly\nRót sinh tố ra ly.\nBước 4: Trang trí\nThêm quả mọng tươi.\nBước 5: Thưởng thức\nDùng lạnh.', 421.4, 12.6, 19.1, 49.9, '2025-05-25 06:08:45', '2025-06-11 14:12:37'),
 (27, 'Mushroom Risotto', './assets/img/dish/dish27.jpg', 'Bước 1: Chuẩn bị nguyên liệu\r\nRửa sạch yến mạch, khoai lang và cải bó xôi.\r\nBước 2: Xào nấm\r\nXào nấm với tỏi và bơ.\r\nBước 3: Nấu risotto\r\nNấu yến mạch với nước dùng và nấm.\r\nBước 4: Thêm gia vị\r\nNêm muối, tiêu vừa ăn.\r\nBước 5: Trình bày\r\nRắc phô mai lên trên và dùng nóng.', 553.6, 31.3, 28.6, 42.8, '2025-05-25 06:08:54', '2025-06-08 16:25:13'),
 (28, 'Energy Balls', './assets/img/dish/dish28.jpg', 'Bước 1: Chuẩn bị nguyên liệu\r\nRửa sạch bông cải xanh, cá hồi và đậu phụ.\r\nBước 2: Trộn nguyên liệu\r\nTrộn tất cả nguyên liệu với mật ong và hạt.\r\nBước 3: Tạo viên\r\nTạo các viên nhỏ bằng tay.\r\nBước 4: Làm lạnh\r\nĐể trong tủ lạnh ít nhất 1 giờ.\r\nBước 5: Thưởng thức\r\nDùng làm món ăn nhẹ.', 586.4, 40.7, 18.7, 63.9, '2025-05-25 06:09:03', '2025-06-08 16:25:13'),
 (29, 'Grilled Tofu', './assets/img/dish/dish29.jpg', 'Bước 1: Chuẩn bị nguyên liệu\r\nRửa sạch thịt gà, rau bina và mật ong.\r\nBước 2: Ướp đậu phụ\r\nƯớp đậu phụ với gia vị.\r\nBước 3: Nướng\r\nNướng đậu phụ đến khi vàng giòn.\r\nBước 4: Chuẩn bị rau\r\nLuộc rau bina hoặc xào nhanh.\r\nBước 5: Trình bày\r\nBày đậu phụ và rau lên đĩa, rưới mật ong.', 594.7, 44, 18.2, 63.7, '2025-05-25 06:09:14', '2025-06-08 16:25:13'),
@@ -480,7 +480,9 @@ INSERT INTO `feedback` (`feedbackId`, `userId`, `phone`, `rating`, `message`, `c
 (6, 32, '0966785836', 3, '1', '2025-06-09 06:20:58', 'huy123@gmail.com'),
 (7, 32, '0966785836', 3, '1', '2025-06-09 06:21:14', 'huy123@gmail.com'),
 (8, 32, '0966785836', 3, '1', '2025-06-09 12:22:08', 'huy123@gmail.com'),
-(9, 37, '0912234232', 2, 'jjjj', '2025-06-09 13:31:38', 'minh123@gmail.com');
+(9, 37, '0912234232', 2, 'jjjj', '2025-06-09 13:31:38', 'minh123@gmail.com'),
+(10, 32, '0966782856', 2, '123', '2025-06-10 06:27:06', 'huy123@gmail.com'),
+(11, 32, '0966782858', 2, '1', '2025-06-11 15:51:29', 'huy123@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -626,31 +628,36 @@ INSERT INTO `userfavorite` (`userId`, `dishId`, `likedAt`, `isLiked`) VALUES
 (25, 4, '2025-05-25 08:50:04', 1),
 (25, 19, '2025-05-25 08:50:04', 1),
 (25, 22, '2025-05-25 08:50:04', 1),
-(32, 1, '2025-06-09 11:18:17', 1),
-(32, 2, '2025-06-10 01:08:18', 1),
-(32, 3, '2025-06-09 12:52:17', 0),
-(32, 4, '2025-06-09 12:52:19', 0),
-(32, 5, '2025-06-09 11:24:25', 1),
-(32, 6, '2025-06-09 04:53:10', 0),
-(32, 7, '2025-06-09 04:53:27', 0),
-(32, 8, '2025-06-09 04:53:28', 0),
+(32, 1, '2025-06-10 09:52:22', 1),
+(32, 2, '2025-06-11 13:41:26', 0),
+(32, 3, '2025-06-11 13:41:22', 0),
+(32, 4, '2025-06-11 13:41:21', 0),
+(32, 5, '2025-06-10 05:15:45', 0),
+(32, 6, '2025-06-10 06:26:45', 1),
+(32, 7, '2025-06-10 06:26:46', 1),
+(32, 8, '2025-06-11 15:48:55', 0),
 (32, 11, '2025-06-09 10:41:15', 0),
 (32, 12, '2025-06-09 04:53:34', 0),
-(32, 14, '2025-06-09 13:13:22', 1),
+(32, 14, '2025-06-10 09:55:22', 0),
 (32, 18, '2025-06-09 04:53:35', 0),
 (32, 20, '2025-06-09 04:53:17', 0),
 (32, 21, '2025-06-09 01:40:13', 0),
 (32, 22, '2025-06-09 04:53:36', 0),
 (32, 23, '2025-06-09 04:53:36', 0),
 (32, 24, '2025-06-09 04:53:26', 0),
-(32, 25, '2025-06-09 13:13:24', 1),
-(32, 27, '2025-06-09 13:13:25', 1),
+(32, 25, '2025-06-10 09:55:21', 0),
+(32, 27, '2025-06-11 10:06:03', 0),
 (32, 29, '2025-06-09 04:53:31', 0),
 (37, 3, '2025-06-09 13:25:07', 1),
 (37, 4, '2025-06-09 17:00:02', 0),
 (37, 5, '2025-06-09 17:00:14', 1),
 (37, 6, '2025-06-09 17:00:13', 1),
-(37, 8, '2025-06-09 17:00:39', 0);
+(37, 8, '2025-06-09 17:00:39', 0),
+(39, 3, '2025-06-11 15:11:35', 1),
+(39, 4, '2025-06-11 15:11:36', 1),
+(39, 5, '2025-06-11 15:11:39', 1),
+(39, 6, '2025-06-11 15:11:40', 1),
+(39, 7, '2025-06-11 15:11:41', 1);
 
 -- --------------------------------------------------------
 
@@ -709,7 +716,8 @@ INSERT INTO `users` (`userId`, `email`, `displayName`, `passwordHash`, `userAvat
 (35, 'Huyphung123987@gmail.com', '123987Hu', '$2y$10$WFFZ42jRua3n7BwPJ6QEW.ekr3kQkiqTFii9ZKpJW8zbJUq4J71Qu', './assets/img/avatars/default.jpg', 0, '2025-06-08 05:32:05'),
 (36, 'dominh@fd.com', 'HuyPhung1', '$2y$10$HY1rJH5655XRa3HmBBTTgefCK4sXmVeN10.BGekTnEFQdlQZPKqe2', './assets/img/avatars/default.jpg', 0, '2025-06-09 13:21:39'),
 (37, 'minh123@gmail.com', 'Minh', '$2y$10$pJgAaTYRBsENdNkO5h0GHOJnukvAK9yn.URHb/LvO8ggyf6RgjgVW', './assets/img/avatars/default.jpg', 0, '2025-06-09 13:22:39'),
-(38, 'Huyphung12345678@gmail.com', 'HuyPhung123CCC', '$2y$10$VRIVxrLvgUa40FhVYDlN1ePIqoPUy1iUEL9lvlOk08z0rMWdBtkBe', './assets/img/avatars/default.jpg', 0, '2025-06-09 17:25:13');
+(38, 'Huyphung12345678@gmail.com', 'HuyPhung123CCC', '$2y$10$VRIVxrLvgUa40FhVYDlN1ePIqoPUy1iUEL9lvlOk08z0rMWdBtkBe', './assets/img/avatars/default.jpg', 0, '2025-06-09 17:25:13'),
+(39, 'huy1234@gmail.com', 'HuyDepTrai', '$2y$10$KgZU28Frm1bMQgewVWuLCeVc81UjIAYaR7dvaIcJhbh8jIpMV53kK', './assets/img/avatars/default.jpg', 0, '2025-06-11 15:10:32');
 
 --
 -- Indexes for dumped tables
@@ -819,7 +827,7 @@ ALTER TABLE `dishes`
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `feedbackId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `feedbackId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `ingredients`
@@ -831,7 +839,7 @@ ALTER TABLE `ingredients`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- Constraints for dumped tables

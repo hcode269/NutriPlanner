@@ -95,14 +95,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const popup = document.createElement("div");
   popup.className = "logout-popup";
   popup.innerHTML = `
-    <div class="logout-popup__box">
-      <p class="logout-popup__text">Do you want to log out of your account?</p>
-      <div class="logout-popup__actions">
-        <button class="popup-confirm">Yes</button>
-        <button class="popup-cancel">No</button>
+      <div class="logout-popup__box">
+        <p class="logout-popup__text">Do you want to log out of your account?</p>
+        <div class="logout-popup__actions">
+          <button class="popup-confirm">Yes</button>
+          <button class="popup-cancel">No</button>
+        </div>
       </div>
-    </div>
-  `;
+    `;
   popup.style.display = "none";
   document.body.appendChild(popup);
 

@@ -125,6 +125,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  display: none; /* ẩn nút xóa khi không có nội dung */
 }
 .clear-search-btn {
   position: absolute;
