@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     filteredItems = allItems.filter((item) => {
       const calorieText =
         item.querySelector(".dish__card-info--desc")?.textContent || "";
-      const calories = parseInt(calorieText.replace(/[^0-9]/g, "")) || 0;
+      const calories = parseFloat(calorieText.replace(/[^\d.]/g, "")) || 0;
       const tagText =
         item.querySelector(".dish__tags")?.textContent.toLowerCase() || "";
       const allergenText =

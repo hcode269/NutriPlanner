@@ -39,7 +39,7 @@ $stmt = $pdo->query("SELECT categoryName FROM categories");
 $mealtypes = $stmt->fetchAll(PDO::FETCH_COLUMN);
 // Chọn các chế độ ăn kiêng
 $stmt = $pdo->query("SELECT tagName FROM tag");
-$tags = $stmt->fetchAll(PDO::FETCH_COLUMN);
+$tags1 = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
 $success = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'submit_feedback') {
@@ -252,7 +252,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
           <label for="filter-diet">Diet Type</label>
           <select id="filter-diet">
             <option value="all">All</option>
-            <?php foreach ($tags as $tag): ?>
+            <?php foreach ($tags1 as $tag): ?>
               <option value="<?= strtolower($tag) ?>"><?= $tag ?></option>
             <?php endforeach; ?>
           </select>
